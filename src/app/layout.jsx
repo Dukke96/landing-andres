@@ -48,12 +48,19 @@ export const metadata = {
   publisher: 'Andres Duque',
   canonical: '/',
   openGraph: {
-    images:
-      'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
+    // images:
+    //   'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
     title: 'Dukke Dev',
     description: 'Bienvenido a Dukke Dev',
     url: 'https://www.andres-duque.com/',
     siteName: 'Dukke Dev',
+    images: [
+      {
+        url: 'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
+        width: 800,
+        height: 600,
+      },
+    ],
   },
 };
 
