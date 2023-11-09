@@ -1,0 +1,183 @@
+/* @import 'font-awesome/css/font-awesome.min.css'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+@import 'node_modules/@glidejs/glide/dist/css/glide.theme.min.css';
+
+/* @import 'node_modules/@glidejs/glide/src/assets/sass/glide.core';
+@import 'node_modules/@glidejs/glide/src/assets/sass/glide.theme'; */
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+.sidebar {
+  width: 140px; /* Ajusta el ancho según tus necesidades */
+}
+
+/* Espacio donde va a estar todo el contenido de la página */
+.content {
+  padding: 10rem;
+  padding-right: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+/* Efectos de neón para los svg del stack */
+
+.glow-effect-next:hover {
+  filter: drop-shadow(0 0 1px #ffffff);
+}
+
+.glow-effect-react:hover {
+  filter: drop-shadow(0 0 3px #149fca);
+}
+
+.glow-effect-tailwind:hover {
+  filter: drop-shadow(0 0 3px #38bdf8);
+}
+
+.glow-effect-vue:hover {
+  filter: drop-shadow(0 0 3px #42b983);
+}
+
+.glow-effect-typescript:hover {
+  filter: drop-shadow(0 0 2px #3178c6);
+}
+
+.glow-effect-git:hover {
+  filter: drop-shadow(0 0 3px #f34d27);
+}
+
+.glow-effect-prisma:hover {
+  filter: drop-shadow(0 0 3px #ffffff);
+}
+
+.glow-effect-graphql:hover {
+  filter: drop-shadow(0 0 3px #f5009b);
+}
+
+.glow-effect-postgresql:hover {
+  filter: drop-shadow(0 0 1px #30648c);
+}
+
+.glow-effect-npm:hover {
+  filter: drop-shadow(0 0 1px #cd3534);
+  color: #cd3534;
+}
+
+.glow-effect-redux:hover {
+  filter: drop-shadow(0 0 1px #7849bd);
+  color: #7849bd;
+}
+
+.glow-effect-nodejs:hover {
+  filter: drop-shadow(0 0 1px #68a063);
+  color: #68a063;
+}
+
+.glow-effect-apollo:hover {
+  filter: drop-shadow(0 0 1px #290b9f);
+  color: #290b9f;
+}
+
+/* Efecto de glow a los container */
+
+.glow-container {
+  position: relative;
+}
+
+.glow-container::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: inherit;
+  z-index: -1;
+  background: transparent;
+  animation: rotatingGlow 3s infinite;
+}
+
+@keyframes rotatingGlow {
+  0% {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.6); /* Azul */
+  }
+  50% {
+    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.6); /* Rojo */
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(0, 0, 255, 0.6); /* Azul */
+  }
+}
+
+.glow-container:hover::before {
+  animation-play-state: running;
+}
+
+/* Estilos para el carrusel de logos */
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  animation: 5s slide infinite linear;
+  overflow: hidden;
+  /* display: inline-block; */
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+}
+
+/* Anula el estilo de enfoque predeterminado */
+input:focus {
+  outline: 2px solid #c085fd; /* Elimina el borde al enfocar */
+}
+
+textarea:focus {
+  outline: 2px solid #c085fd; /* Elimina el borde al enfocar */
+}
