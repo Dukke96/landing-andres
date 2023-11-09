@@ -46,6 +46,14 @@ export const metadata = {
   authors: [{ name: 'Andres Duque' }],
   creator: 'Andres Duque',
   publisher: 'Andres Duque',
+  canonical: '/',
+  openGraph: {
+    images: '/Perfil-Landing.png',
+    title: 'Dukke Dev',
+    description: 'Bienvenido a mi portfolio',
+    url: 'https://www.andres-duque.com/',
+    siteName: 'Dukke Dev',
+  },
 };
 
 export const viewport = {
