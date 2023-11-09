@@ -48,9 +48,10 @@ export const metadata = {
   publisher: 'Andres Duque',
   canonical: '/',
   openGraph: {
-    images: '/Perfil-Landing.png',
+    images:
+      'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
     title: 'Dukke Dev',
-    description: 'Bienvenido a mi portfolio',
+    description: 'Bienvenido a Dukke Dev',
     url: 'https://www.andres-duque.com/',
     siteName: 'Dukke Dev',
   },
