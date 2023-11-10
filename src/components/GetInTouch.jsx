@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa';
 import formAnimation from '@/assets/formAnimation.json';
+import sendingEmailAnimation from '@/assets/sendingEmailAnimation.json';
 import InViewLottie from './InViewLottie';
 import Modal from './Modal';
 
@@ -53,16 +54,24 @@ export default function GetInTouch() {
 
       if (res.ok) {
         const data = await res.json();
+
         setModalInfo({
-          setIsShowing: true,
+          isOpen: true,
           title: 'Éxito',
           message: 'Correo enviado correctamente.',
         });
-        // Aquí puedes resetear tu formulario si es necesario
-        // setFormData({ ... });
+
+        // Resetear el formulario
+        setFormData({
+          name: '',
+          lastName: '',
+          email: '',
+          number: '',
+          detalles: '',
+        });
       } else {
-        // Asume que el servidor podría devolver un mensaje de error personalizado
         const errorData = await res.json();
+
         setModalInfo({
           isOpen: true,
           title: 'Error',
@@ -127,6 +136,7 @@ export default function GetInTouch() {
                       className='py-3 px-4 block w-full rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
                       placeholder='Nombre'
                       onChange={handleChange}
+                      value={formData?.name}
                     />
                   </div>
 
@@ -141,6 +151,7 @@ export default function GetInTouch() {
                       className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
                       placeholder='Apellido'
                       onChange={handleChange}
+                      value={formData?.lastName}
                     />
                   </div>
                 </div>
@@ -158,6 +169,7 @@ export default function GetInTouch() {
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
                     placeholder='Email'
                     onChange={handleChange}
+                    value={formData?.email}
                   />
                 </div>
 
@@ -172,6 +184,7 @@ export default function GetInTouch() {
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
                     placeholder='Celular'
                     onChange={handleChange}
+                    value={formData?.number}
                   />
                 </div>
 
@@ -186,6 +199,7 @@ export default function GetInTouch() {
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
                     placeholder='Detalles'
                     onChange={handleChange}
+                    value={formData?.detalles}
                   />
                 </div>
               </div>
@@ -201,11 +215,23 @@ export default function GetInTouch() {
                 </button>
               </div>
 
+              {isLoading && (
+                <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm'>
+                  <InViewLottie
+                    animationData={sendingEmailAnimation}
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              )}
+
               <Modal
                 title={modalInfo?.title}
                 message={modalInfo?.message}
                 isShowing={modalInfo?.isOpen}
-                setIsShowing={setModalInfo} // Asegúrate de que esta función maneje el estado de manera adecuada
+                setIsShowing={(isOpen) =>
+                  setModalInfo((info) => ({ ...info, isOpen }))
+                }
               />
 
               <div className='mt-3 text-center'>

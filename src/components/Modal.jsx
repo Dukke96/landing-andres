@@ -89,7 +89,7 @@ export default function Modal({ title, message, isShowing, setIsShowing }) {
       {isShowing && typeof document !== 'undefined'
         ? ReactDOM.createPortal(
             <div
-              className='fixed top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-slate-300/20 backdrop-blur-sm'
+              className='fixed top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm'
               aria-labelledby='header-3a content-3a'
               aria-modal='true'
               tabindex='-1'
@@ -98,19 +98,19 @@ export default function Modal({ title, message, isShowing, setIsShowing }) {
               {/*    <!-- Modal --> */}
               <div
                 ref={wrapperRef}
-                className='flex max-h-[90vh] w-11/12 max-w-xl flex-col gap-6 overflow-hidden rounded bg-white p-6 text-slate-500 shadow-xl shadow-slate-700/10'
+                className='flex max-h-[90vh] w-11/12 max-w-xl flex-col gap-6 overflow-hidden rounded bg-slate-200 dark:bg-slate-900 p-6 text-slate-900 dark:text-slate-200 shadow-xl shadow-slate-700/10'
                 id='modal'
                 role='document'
               >
                 {/*        <!-- Modal header --> */}
                 <header id='header-3a' className='flex items-center gap-4'>
-                  <h3 className='flex-1 text-xl font-medium text-slate-700'>
+                  <h3 className='flex-1 text-xl font-medium text-purple-600 dark:text-purple-400'>
                     {title}
                   </h3>
                   <button
                     type='button'
                     onClick={() => setIsShowing(false)}
-                    className='inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent'
+                    className='inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-wide text-purple-600 dark:text-purple-400 transition duration-300 hover:bg-purple-400 dark:hover:bg-purple-200 hover:text-purple-700 dark:hover:text-purple-500 dark:focus:bg-purple-300 focus:bg-purple-500 focus:text-purple-800 dark:focus:text-purple-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent'
                     aria-label='close dialog'
                   >
                     <span className='relative only:-mx-5'>
