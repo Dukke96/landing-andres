@@ -52,15 +52,16 @@ export const metadata = {
     //   'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
     title: 'Dukke Dev',
     description: 'Bienvenido a Dukke Dev',
-    url: 'https://www.andres-duque.com/',
+    url: 'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699660313/Perfil-Landing_xkqwow.png',
     siteName: 'Dukke Dev',
     images: [
       {
-        url: 'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
-        width: 800,
-        height: 600,
+        url: 'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699660313/Perfil-Landing_xkqwow.png',
+        width: 640,
+        height: 640,
       },
     ],
+    type: 'website',
   },
 };
 
