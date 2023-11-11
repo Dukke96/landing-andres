@@ -33,15 +33,20 @@ export default function BentoColumns() {
   const [inViewRefAbout, inViewAbout] = useInView({ triggerOnce: false });
   const [inViewRefStack, inViewStack] = useInView({
     triggerOnce: false,
-    threshold: 0.2,
+    threshold: 0.3,
   });
 
-  const [inViewRefSkills, inViewSkills] = useInView({ triggerOnce: false });
+  const [inViewRefSkills, inViewSkills] = useInView({
+    triggerOnce: false,
+    threshold: 0.3,
+  });
   const [inViewRefExperience, inViewExperience] = useInView({
     triggerOnce: true,
+    threshold: 0.3,
   });
   const [inViewRefEducation, inViewEducation] = useInView({
     triggerOnce: true,
+    threshold: 0.3,
   });
 
   const [animatePropsStack, setAnimatePropsStack] = useState({
@@ -241,16 +246,16 @@ export default function BentoColumns() {
           initial={{ y: '-100vw', opacity: 0 }}
           animate={{ y: '0', opacity: 1 }}
           transition={{ duration: 1.5 }}
-          className='lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'
+          className='lg:w-3/3 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'
         >
           <AboutMeCard />
         </m.div>
 
         {/* Segunda fila */}
-        <div className='lg:flex mb-5 gap-20 my-20 flex-col lg:flex-row h-full'>
+        <div className='lg:flex flex-grow gap-20 my-20 flex-col lg:flex-row h-full'>
           <div
             ref={inViewRefStack}
-            className='lg:relative w-1/2 my-5 flex-col justify-center flex-grow'
+            className='lg:relative w-1/2 flex-col justify-center flex-grow'
           >
             <m.div
               initial={{ x: '-100vw', opacity: 0 }}
@@ -258,7 +263,7 @@ export default function BentoColumns() {
               transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
               className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
             >
-              <div className='absolute top-[-120px] left-[-90px] z-50'>
+              <div className='absolute top-[-100px] left-[-90px] z-50'>
                 <InViewLottie
                   animationData={stackAnimation}
                   width={200}
@@ -271,7 +276,7 @@ export default function BentoColumns() {
 
           <div
             ref={inViewRefSkills}
-            className='lg:relative w-1/2 my-5 flex-col justify-center flex-grow'
+            className='lg:relative w-1/2 flex-col justify-center flex-grow'
           >
             <m.div
               initial={{ x: '100vw', opacity: 0 }}
@@ -279,7 +284,7 @@ export default function BentoColumns() {
               transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
               className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
             >
-              <div className='absolute top-[-120px] left-[-90px] z-50'>
+              <div className='absolute top-[-100px] left-[-90px] z-50'>
                 <InViewLottie
                   animationData={skillsAnimation}
                   width={200}
@@ -292,10 +297,10 @@ export default function BentoColumns() {
         </div>
 
         {/* Tercera fila */}
-        <div className='lg:flex-row flex flex-col mb-5 gap-20 my-20'>
+        <div className='lg:flex-row flex flex-col gap-20 my-20'>
           <div
             ref={inViewRefExperience}
-            className='lg:relative w-1/2 my-5 flex-col justify-center flex-grow'
+            className='lg:relative w-1/2 flex-col justify-center flex-grow'
           >
             <m.div
               initial={{ x: '-100vw', opacity: 0 }}
@@ -316,7 +321,7 @@ export default function BentoColumns() {
 
           <div
             ref={inViewRefEducation}
-            className='lg:relative w-1/2 my-5 flex-col justify-center flex-grow'
+            className='lg:relative w-1/2 flex-col justify-center flex-grow'
           >
             <m.div
               initial={{ x: '-100vw', opacity: 0 }}
@@ -338,17 +343,17 @@ export default function BentoColumns() {
           {/* <div className='relative w-1/2 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'></div> */}
         </div>
         {/* Cuarta fila */}
-        <div className='mb-5 rounded-xl my-24'>
-          <div className='flex mx-auto my-auto justify-center text-center'>
-            <div className='flex-col w-full justify-center mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
+        <div className='mb-5 rounded-xl my-20'>
+          <div className='flex-col mx-auto my-auto justify-start text-center'>
+            <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               Proyectos
-              <div className='flex mx-auto my-auto justify-center align-middle'>
+              {/* <div className='flex mx-auto my-auto justify-center align-middle'>
                 <InViewLottie
                   animationData={projectsAnimation}
                   width={400}
                   height={270}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className='glide-lg hover:cursor-grab'>
