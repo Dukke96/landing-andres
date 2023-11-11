@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react';
 import Glide from '@glidejs/glide';
-import { Projects } from '@/assets/projects';
+import { projects } from '@/assets/Projects';
 
 export default function ProjectsCarouselLG({ perView }) {
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function ProjectsCarouselLG({ perView }) {
         {/*    <!-- Slides --> */}
         <div className='overflow-hidden flex flex-grow' data-glide-el='track'>
           <ul className='whitespace-no-wrap flex-no-wrap flex-grow [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full mb-5'>
-            {Projects.map((project) => (
+            {projects.map((project) => (
               <li key={project.titulo} className='flex h-full'>
                 <div className='rounded-xl flex-col justify-between bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500  transition-all text-slate-800 dark:text-slate-100'>
                   {/*  <!-- Image --> */}

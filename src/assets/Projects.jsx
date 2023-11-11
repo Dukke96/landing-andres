@@ -12,7 +12,7 @@ import {
   SiVercel,
 } from 'react-icons/si';
 
-export const Projects = [
+export const projects = [
   {
     imagen:
       'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699682632/Captura_de_pantalla_2023-11-11_010320_vvouuw.png',
