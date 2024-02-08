@@ -13,8 +13,8 @@ const victor_mono = Victor_Mono({
 });
 
 export const metadata = {
-  title: 'Dukke Dev',
-  description: 'Portafolio Andres Duque',
+  title: 'Andres David Duque Cadena',
+  description: 'Portfolio Andres Duque',
   keywords: [
     'Andres',
     'Andrés',
@@ -43,17 +43,18 @@ export const metadata = {
     'Front-end',
     'Developer',
   ],
-  authors: [{ name: 'Andres Duque' }],
-  creator: 'Andres Duque',
-  publisher: 'Andres Duque',
+  authors: [{ name: 'Andres David Duque Cadena' }],
+  creator: 'Andres David Duque Cadena',
+  publisher: 'Andres David Duque Cadena',
   canonical: '/',
   openGraph: {
     // images:
     //   'https://www.andres-duque.com/_next/image?url=%2FPerfil-Landing.png&w=640&q=75',
-    title: 'Dukke Dev',
-    description: 'Bienvenido a Dukke Dev',
+    title: 'Andres David Duque Cadena',
+    description:
+      'Bienvenido a mi website personal, aquí encontrarás mi portafolio y blog personal.',
     url: 'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699660313/Perfil-Landing_xkqwow.png',
-    siteName: 'Dukke Dev',
+    siteName: 'Andres David Duque Cadena',
     images: [
       {
         url: 'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699660313/Perfil-Landing_xkqwow.png',

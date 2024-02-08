@@ -18,14 +18,14 @@ export default function EducationFeed() {
         >
           <div className='flex flex-col flex-1 gap-4'>
             <h4 className='text-lg font-bold text-purple-600 dark:text-purple-400'>
-              Maestría en Desarrollo de Software - Universidad de los Andes{' '}
+              Maestría en Ingeniería de Software - Universidad de los Andes{' '}
               <span className='text-lg pr-5 font-bold text-purple-600 dark:text-purple-400'>
                 {' '}
-                - Próximamente
+                - En Curso
               </span>{' '}
             </h4>
             <p className='pr-5 text-slate-800 dark:text-slate-100'>
-              Meta en proceso de construcción 🚧{' '}
+              Maestría en curso 🚧{' '}
             </p>
           </div>
         </li>

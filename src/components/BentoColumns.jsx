@@ -18,6 +18,7 @@ import ProjectsCarouselSM from './ProjectsCarouselSM';
 import ProjectsCarouselMobile from './ProjectsCarouselMobile';
 import Skills2 from './Skills';
 import InViewLottie from './InViewLottie';
+import Hobbies from './Hobbies';
 
 // Animaciones
 import educationAnimation from '@/assets/educationAnimation.json';
@@ -363,7 +364,7 @@ export default function BentoColumns() {
         {/* Quinta fila */}
         <div className='flex gap-5 mb-40'>
           <div className='w-1/3 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
-            Hobbies
+            <Hobbies />
           </div>
           <div className='w-2/3 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
             <GetInTouch />
