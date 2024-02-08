@@ -15,7 +15,7 @@ const ParticlesBackgroundLight = React.lazy(() =>
   import('@/components/ParticlesBackgroundLight')
 );
 
-export default function Home() {
+export default function NotFound() {
   const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
@@ -25,26 +25,30 @@ export default function Home() {
   }, [theme, resolvedTheme]);
 
   return (
-    <Suspense
-      fallback={
-        <div className='flex justify-center align-middle mx-auto my-auto'>
+    <html lang='en'>
+      <body>
+        <Suspense
+          fallback={
+            <div className='flex justify-center align-middle mx-auto my-auto'>
+              <Lottie
+                animationData={loadingRocket}
+                style={{ width: 500, height: 500 }}
+              />
+            </div>
+          }
+        >
+          {theme === 'dark' ? (
+            <ParticlesBackground />
+          ) : (
+            <ParticlesBackgroundLight />
+          )}
           <Lottie
-            animationData={loadingRocket}
-            style={{ width: 500, height: 500 }}
+            animationData={animation404}
+            // style={{ width: 1000, height: 1000 }}
+            className='w-auto h-auto mx-auto md:mt-[-10rem] xl:mt-[-25rem]'
           />
-        </div>
-      }
-    >
-      {theme === 'dark' ? (
-        <ParticlesBackground />
-      ) : (
-        <ParticlesBackgroundLight />
-      )}
-      <Lottie
-        animationData={animation404}
-        // style={{ width: 1000, height: 1000 }}
-        className='w-auto h-auto mx-auto md:mt-[-10rem] xl:mt-[-25rem]'
-      />
-    </Suspense>
+        </Suspense>
+      </body>
+    </html>
   );
 }

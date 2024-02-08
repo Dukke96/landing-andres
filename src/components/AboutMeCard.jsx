@@ -10,9 +10,12 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
+import { useTranslations } from 'next-intl';
 import CVButton from './CVButton';
 
 export default function AboutMeCard() {
+  const t = useTranslations('about');
+
   const [headerAbout] = useTypewriter({
     words: ['Andrés ', 'Dukke '],
     loop: 0,
@@ -27,7 +30,7 @@ export default function AboutMeCard() {
           <header className='flex gap-4 mb-4'>
             <div className='flex mb-5'>
               <h3 className='flex text-2xl md:text-4xl lg:text-6xl font-bold text-slate-800 dark:text-slate-100 whitespace-pre'>
-                Hola, soy{' '}
+                {t('hola')}{' '}
               </h3>
               <span className='flex w-fit sm:min-w-[144px] md:min-w-[216px] lg:min-w-[360px] text-2xl md:text-4xl lg:text-6xl font-bold text-purple-600 dark:text-purple-400 whitespace-pre'>
                 {headerAbout}
