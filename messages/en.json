@@ -1,5 +1,78 @@
 {
   "about": {
-    "hola": "Hi, I'm"
+    "hola": "Hi, I'm",
+    "presentacion": "Welcome to my little digital universe 💻! I'm Andrés, though most know me as Dukke. I'm an enthusiast in web development, focused on the front-end and exploring the fascinating world of back-end 🔮. I'm a dog lover 🐶, a video game enthusiast 🎮, and a digital storyteller who enjoys creating web applications that tell stories and create unforgettable experiences. If you're looking for someone who puts love 💖 and dedication 💪 into every project, you're in the right place!"
+  },
+  "cv": {
+    "descargar": "Download CV"
+  },
+  "skills": {
+    "pensamiento": "Logical Thinking",
+    "aprendizaje": "Continuous Learning",
+    "comunicacion": "Effective Communication",
+    "equipo": "Teamwork",
+    "creatividad": "Creativity",
+    "empatia": "Empathy",
+    "curiosidad": "Curiosity",
+    "responsabilidad": "Responsibility",
+    "resolucion": "Problem Solving"
+  },
+  "experiencia": {
+    "titulo": "Experience",
+    "prevalentware": "In this company, apart from meeting wonderful people, I learned and performed tasks such as:",
+    "prevalent-1": "Designing responsive web applications using Next JS, React JS, and Tailwind CSS",
+    "prevalent-2": "Data integration through GraphQL APIs using Apollo for efficient queries and Prisma for database management",
+    "prevalent-3": "Developing functionalities and components on the front-end and back-end using JavaScript and TypeScript",
+    "prevalent-4": "Managing databases using PostgreSQL",
+    "nevato": "It was the first company that trusted my work, for which I appreciate it a lot. Here, I mainly acquired knowledge and performed tasks such as:",
+    "nevato-1": "Designing responsive web applications using React JS and Tailwind CSS",
+    "nevato-2": "Data integration through RESTful APIs using tools like Axios",
+    "nevato-3": "Developing functionalities and components on the front-end using JavaScript",
+    "freelance": "As a freelancer, I have carried out activities such as:",
+    "freelance-1": "Designing web applications in Next JS, React JS, and Tailwind CSS",
+    "freelance-2": "Providing support in small projects for friends",
+    "freelance-3": "Helping people with basic programming doubts",
+    "freelance-4": "Carrying out personal projects as a hobby"
+  },
+  "educacion": {
+    "titulo": "Education",
+    "andes": "Master's in Software Engineering - Universidad de los Andes",
+    "andes-fecha": "- Ongoing",
+    "andes-descripcion": "Ongoing Master's degree 🚧",
+    "pereira": "Diploma in Web Development - Universidad Tecnológica de Pereira",
+    "pereira-fecha": "Designing responsive web applications using Next JS, React JS, and Tailwind CSS",
+    "pereira-descripcion": "I took this diploma as I was selected for the \"Misión TIC\" program, and in it, I learned about:",
+    "pereira-1": "Fundamentals of programming in Python",
+    "pereira-2": "Fundamentals of programming in Java",
+    "pereira-3": "Fundamentals of programming in HTML, CSS, and JavaScript",
+    "pereira-4": "Web development-focused programming with frameworks like React and Vue",
+    "pereira-5": "Consumption of data through REST APIs",
+    "unal": "Bachelor's in Civil Engineering - Universidad Nacional de Colombia",
+    "unal-fecha": "Designing responsive web applications using Next JS, React JS, and Tailwind CSS",
+    "unal-descripcion": "In my degree, besides learning things I love related to it, I learned many things that gradually brought me into the world of development, such as:",
+    "unal-1": "Python programming to solve different problems in the field",
+    "unal-2": "Basic programming in C++",
+    "unal-3": "R programming for statistical analysis",
+    "unal-4": "Automation of activities in ArcGIS using VPL"
+  },
+  "proyectos": {
+    "portfolio": {
+      "titulo": "Portfolio",
+      "subtitulo": "Own Project",
+      "descripcion": "Personal landing page where I share a bit about who I am, the technologies and soft skills I've acquired over time, a glimpse into my work and academic experience, the projects I've been a part of, my hobbies, and ways to get in touch with me."
+    },
+    "greenLoop": {
+      "titulo": "Green Loop",
+      "subtitulo": "Developed at Prevalentware",
+      "descripcion": "Administrative platform for a company dedicated to sustainable construction. For this platform, I worked on front-end tasks such as record and invoice registration using GraphQL mutations and queries, data visualization in tables, and an internal notification system for all staff, including email notifications."
+    },
+    "labSonrisas": {
+      "titulo": "Lab Sonrisas",
+      "subtitulo": "Developed at Prevalentware",
+      "descripcion": "Administrative platform for a company specializing in the manufacturing and distribution of invisible dental aligners. I worked on various tasks including interface development and GraphQL mutations for creating and editing people, orders, invoices, among others. Responsive functionality for signing from a mobile device upon receiving the order, among other tasks."
+    }
+  },
+  "bento": {
+    "proyectos": "Projects"
   }
 }

@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react';
 import Glide from '@glidejs/glide';
-import { projects } from '@/assets/Projects';
+import Projects from '@/assets/Projects';
 
 export default function ProjectsCarouselLG({ perView }) {
   useEffect(() => {
@@ -34,45 +34,7 @@ export default function ProjectsCarouselLG({ perView }) {
       <div className='glide-lg relative w-full h-auto '>
         {/*    <!-- Slides --> */}
         <div className='overflow-hidden flex flex-grow' data-glide-el='track'>
-          <ul className='whitespace-no-wrap flex-no-wrap flex-grow [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform] relative flex w-full mb-5'>
-            {projects.map((project) => (
-              <li key={project.titulo} className='flex h-full'>
-                <div className='rounded-xl flex-col justify-between bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500  transition-all text-slate-800 dark:text-slate-100'>
-                  {/*  <!-- Image --> */}
-                  <figure>
-                    <img
-                      src={project.imagen}
-                      alt={project.titulo}
-                      className='aspect-video w-full rounded-t-xl'
-                    />
-                  </figure>
-                  {/*  <!-- Body--> */}
-                  <div className='p-6'>
-                    <header className='mb-4'>
-                      <h3 className='text-xl font-bold text-purple-600 dark:text-purple-400'>
-                        {project.titulo}
-                      </h3>
-                      <p className='text-sm text-slate-400'>
-                        {project.subtitulo}
-                      </p>
-                    </header>
-                    <div className='flex-col'>
-                      <p>{project.descripción}</p>
-                      <div className='flex items-center justify-between flex-wrap pt-5 pb-2'>
-                        {project.stack.map((stackItem) => (
-                          <div key={stackItem.key} className='mr-3 mb-3'>
-                            {stackItem}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Aquí puedes agregar la lógica para mostrar el stack si es necesario */}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <Projects />
         </div>
         {/*    <!-- Controls --> */}
         <div

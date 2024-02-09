@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { motion as m } from 'framer-motion';
 import Lottie from 'lottie-react';
 import { useInView } from 'react-intersection-observer';
+import { useTranslations } from 'next-intl';
 
 // Componentes
 import AboutMeCard from './AboutMeCard';
@@ -30,6 +31,7 @@ import projectsAnimation from '@/assets/projectsAnimation.json';
 // import experienceAnimationLottie from '@/assets/experienceAnimationLottie';
 
 export default function BentoColumns() {
+  const t = useTranslations('bento');
   // eslint-disable-next-line no-unused-vars
   const [inViewRefAbout, inViewAbout] = useInView({ triggerOnce: false });
   const [inViewRefStack, inViewStack] = useInView({
@@ -140,7 +142,7 @@ export default function BentoColumns() {
         <div className='glide-mb mb-5 rounded-xl my-5'>
           <div className='flex mx-auto my-auto justify-center text-center'>
             <div className='flex-col w-full justify-center mx-auto text-2xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
-              Proyectos
+              {t('proyectos')}
               <div className='flex mx-auto my-auto justify-center align-middle'>
                 <InViewLottie
                   animationData={projectsAnimation}
@@ -347,7 +349,7 @@ export default function BentoColumns() {
         <div className='mb-5 rounded-xl my-20'>
           <div className='flex-col mx-auto my-auto justify-start text-center'>
             <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
-              Proyectos
+              {t('proyectos')}
               {/* <div className='flex mx-auto my-auto justify-center align-middle'>
                 <InViewLottie
                   animationData={projectsAnimation}

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function CVButton() {
+  const t = useTranslations('cv');
   return (
     <>
       {/* <!-- Component: Large primary button with trailing icon  --> */}
@@ -15,7 +17,7 @@ export default function CVButton() {
           target='_blank'
           rel='noreferrer'
         >
-          <span className='mr-2'>Descargar CV</span>
+          <span className='mr-2'>{t('descargar')}</span>
           <span className='relative only:-mx-6'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -27,8 +29,8 @@ export default function CVButton() {
               role='button'
               aria-labelledby='title-32 desc-32'
             >
-              <title id='title-32'>Descargar CV</title>
-              <desc id='desc-32'>Descargar CV</desc>
+              <title id='title-32'>{t('descargar')}</title>
+              <desc id='desc-32'>{t('descargar')}</desc>
               <path
                 strokeLinecap='round'
                 strokeLinejoin='round'

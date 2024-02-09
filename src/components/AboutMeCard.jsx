@@ -38,16 +38,7 @@ export default function AboutMeCard() {
               </span>
             </div>
           </header>
-          <p className='lg:w-fit text-justify'>
-            ¡Bienvenido/a a mi pequeño universo digital 💻! Soy Andrés, aunque
-            la mayoría me conoce como Dukke. Soy un entusiasta del desarrollo
-            web, enfocado en el front-end y explorando el fascinante mundo del
-            back-end 🔮. Soy un amante de los perros 🐶, los videojuegos 🎮 y un
-            narrador digital que disfruta creando aplicaciones web que cuentan
-            historias y crean experiencias inolvidables. Si estás buscando a
-            alguien que le ponga amor 💖 y dedicación 💪 a cada proyecto, ¡estás
-            en el lugar correcto!
-          </p>
+          <p className='lg:w-fit text-justify'>{t('presentacion')}</p>
           <div className='mt-12 xl:mt-20'>
             <span className='flex mx-auto text-4xl mt-5 mb-5 w-full justify-around max-w-[450px] my-auto'>
               <a
