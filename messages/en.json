@@ -74,5 +74,40 @@
   },
   "bento": {
     "proyectos": "Projects"
-  }
+  },
+  "hobbies": {
+    "subtitulo": "Get to know me a bit more as a person",
+    "musica": "Music",
+    "musica-d": "I enjoy many musical genres, as well as playing the guitar which is my favorite instrument",
+    "gaming": "Gaming",
+    "gaming-d": "I am a lover of video games, I really enjoy role-playing, adventure, and strategy games",
+    "cocina": "Cooking",
+    "cocina-d": "I really like cooking, especially fast food dishes",
+    "pintura": "Painting",
+    "pintura-d": "Although I am not an expert, I really enjoy painting in my free time",
+    "gym": "Gym",
+    "gym-d": "I really like exercising, especially strength training",
+    "anime": "Anime",
+    "anime-d": "I really enjoy watching anime and manga, especially the action, adventure, and comedy genres"
+    },
+    "contacto": {
+      "titulo": "Get In Touch With Me",
+      "subtitulo-1": "I would love to be able to help you, so do not hesitate to contact me",
+      "subtitulo-2": "Fill out the form below",
+      "nombre": "Name",
+      "apellido": "Last Name",
+      "correo": "Email",
+      "celular": "Mobile",
+      "detalles": "Details",
+      "enviar": "Send",
+      "subtitulo-3": "I will respond as soon as possible",
+      "linkedin": "If you want to see my LinkedIn profile or contact me there, do not hesitate to do so",
+      "linkedin-l": "Go to LinkedIn",
+      "whatsapp": "The fastest way to contact me 🎉.",
+      "whatsapp-l": "Go to WhatsApp",
+      "telegram": "An alternative option for a quick response",
+      "telegram-l": "Go to Telegram",
+      "discord": "An option if you want to make a new friend",
+      "discord-l": "Go to Discord"
+      }
 }

@@ -3,6 +3,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   FaDiscord,
   FaLinkedin,
@@ -15,6 +16,7 @@ import InViewLottie from './InViewLottie';
 import Modal from './Modal';
 
 export default function GetInTouch() {
+  const t = useTranslations('contacto');
   const [formData, setFormData] = useState({
     name: '',
     lastName: '',
@@ -94,10 +96,10 @@ export default function GetInTouch() {
       <div className='max-w-2xl lg:max-w-5xl mx-auto'>
         <div className='text-center'>
           <h1 className='text-3xl font-bold text-purple-600 dark:text-purple-400'>
-            Contáctame
+            {t('titulo')}
           </h1>
           <p className='mt-1 text-slate-900 dark:text-slate-200'>
-            Me encantaría poder ayudarte, así que no dudes en contactarme.
+            {t('subtitulo-1')}
           </p>
         </div>
 
@@ -105,12 +107,8 @@ export default function GetInTouch() {
           {/* <!-- Card --> */}
           <div className='flex flex-col border border-slate-900 rounded-xl p-4 sm:p-6 lg:p-8 dark:border-gray-700'>
             <h2 className='mb-8 text-xl font-semibold text-slate-900 dark:text-slate-200 text-center'>
-              Llena el siguiente formulario
+              {t('subtitulo-2')}
               <span className='flex justify-center'>
-                {/* <Lottie
-                    animationData={formAnimation}
-                    style={{ width: 100, height: 100 }}
-                  /> */}
                 <div className='flex justify-center'>
                   <InViewLottie
                     animationData={formAnimation}
@@ -127,14 +125,14 @@ export default function GetInTouch() {
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                   <div>
                     <label htmlFor='name' className='sr-only'>
-                      Nombre
+                      {t('nombre')}
                     </label>
                     <input
                       type='text'
                       name='name'
                       id='name'
                       className='py-3 px-4 block w-full rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
-                      placeholder='Nombre'
+                      placeholder={t('nombre')}
                       onChange={handleChange}
                       value={formData?.name}
                     />
@@ -142,14 +140,14 @@ export default function GetInTouch() {
 
                   <div>
                     <label htmlFor='lastName' className='sr-only'>
-                      Apellido
+                      {t('apellido')}
                     </label>
                     <input
                       type='text'
                       name='lastName'
                       id='lastName'
                       className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
-                      placeholder='Apellido'
+                      placeholder={t('apellido')}
                       onChange={handleChange}
                       value={formData?.lastName}
                     />
@@ -159,7 +157,7 @@ export default function GetInTouch() {
 
                 <div>
                   <label htmlFor='email' className='sr-only'>
-                    Email
+                    {t('correo')}
                   </label>
                   <input
                     type='email'
@@ -167,7 +165,7 @@ export default function GetInTouch() {
                     id='email'
                     autoComplete='email'
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
-                    placeholder='Email'
+                    placeholder={t('correo')}
                     onChange={handleChange}
                     value={formData?.email}
                   />
@@ -175,14 +173,14 @@ export default function GetInTouch() {
 
                 <div>
                   <label htmlFor='number' className='sr-only'>
-                    Teléfono
+                    {t('celular')}
                   </label>
                   <input
                     type='text'
                     name='number'
                     id='number'
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
-                    placeholder='Celular'
+                    placeholder={t('celular')}
                     onChange={handleChange}
                     value={formData?.number}
                   />
@@ -190,14 +188,14 @@ export default function GetInTouch() {
 
                 <div>
                   <label htmlFor='detalles' className='sr-only'>
-                    Detalles
+                    {t('detalles')}
                   </label>
                   <textarea
                     id='detalles'
                     name='detalles'
                     rows='4'
                     className='py-3 px-4 block w-full border-gray-200 rounded-md text-sm dark:bg-slate-900 dark:text-slate-200 dark:placeholder-slate-300 placeholder-slate-500'
-                    placeholder='Detalles'
+                    placeholder={t('detalles')}
                     onChange={handleChange}
                     value={formData?.detalles}
                   />
@@ -211,7 +209,7 @@ export default function GetInTouch() {
                   className='inline-flex justify-center items-center gap-x-3 text-center bg-purple-600 hover:bg-purple-700 dark:bg-purple-500 dark:hover:bg-purple-600 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:focus:ring-offset-gray-800'
                   onClick={handleSubmit}
                 >
-                  Enviar
+                  {t('enviar')}
                 </button>
               </div>
 
@@ -236,7 +234,7 @@ export default function GetInTouch() {
 
               <div className='mt-3 text-center'>
                 <p className='text-sm dark:text-slate-200 text-slate-900 '>
-                  Te responderé tan pronto como sea posible.
+                  {t('subtitulo-3')}
                 </p>
               </div>
             </form>
@@ -257,11 +255,10 @@ export default function GetInTouch() {
               </a>
               <div>
                 <h3 className='font-semibold text-slate-900 dark:text-slate-200'>
-                  Linkedin
+                  LinkedIn
                 </h3>
                 <p className='mt-1 text-sm text-slate-900 dark:text-slate-200'>
-                  Si deseas conocer mi perfil de linkedin o contactarme por ahí
-                  no dudes en hacerlo.
+                  {t('linkedin')}
                 </p>
                 <a
                   className='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600  dark:text-gray-400  hover:text-[#0b66c3] dark:hover:text-[#0b66c3] hover:font-bold'
@@ -270,7 +267,7 @@ export default function GetInTouch() {
                   rel='noreferrer'
                   aria-label='Visit my Linkedin profile'
                 >
-                  Ir a Linkedin
+                  {t('linkedin-l')}
                   <svg
                     className='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1'
                     width='16'
@@ -307,7 +304,7 @@ export default function GetInTouch() {
                   Whatsapp
                 </h3>
                 <p className='mt-1 text-sm text-slate-900 dark:text-slate-200'>
-                  La forma mas rapida de contactarme 🎉.
+                  {t('whatsapp')}
                 </p>
                 <a
                   className='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600  dark:text-gray-400 hover:text-[#1ad03f] dark:hover:text-[#1ad03f] hover:font-bold'
@@ -316,7 +313,7 @@ export default function GetInTouch() {
                   rel='noreferrer'
                   aria-label='Visit my Whatsapp profile'
                 >
-                  Ir a Whatsapp
+                  {t('whatsapp-l')}
                   <svg
                     className='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1'
                     width='16'
@@ -353,13 +350,13 @@ export default function GetInTouch() {
                   Telegram
                 </h3>
                 <p className='mt-1 text-sm text-slate-900 dark:text-slate-200'>
-                  Una opción alternativa para recibir una respuesta rápida.
+                  {t('telegram')}
                 </p>
                 <a
                   className='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-[#2fa2d9] dark:hover:text-[#2fa2d9] hover:font-bold'
                   href='asd'
                 >
-                  Ir a Telegram
+                  {t('telegram-l')}
                   <svg
                     className='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1'
                     width='16'
@@ -396,7 +393,7 @@ export default function GetInTouch() {
                   Discord
                 </h3>
                 <p className='mt-1 text-sm text-slate-900 dark:text-slate-200'>
-                  Opción por si quieres hacer un nuevo amigo.
+                  {t('discord')}
                 </p>
                 <a
                   className='mt-2 inline-flex items-center gap-x-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-[#5563ea] dark:hover:text-[#5563ea] hover:font-bold'
@@ -405,7 +402,7 @@ export default function GetInTouch() {
                   rel='noreferrer'
                   aria-label='Visit my Discord profile'
                 >
-                  Ir a Discord
+                  {t('discord-l')}
                   <svg
                     className='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1'
                     width='16'

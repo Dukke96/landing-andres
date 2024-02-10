@@ -159,7 +159,7 @@ export default function BentoColumns() {
         {/* Cuarta fila */}
         <div className='flex flex-col mb-5 gap-5 items-center'>
           <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
-            Hobbies
+            <Hobbies />
           </div>
           <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
             <GetInTouch />
@@ -191,13 +191,20 @@ export default function BentoColumns() {
           </div>
         </div>
         {/* Tercera fila */}
-        <div className='glide-sm flex mb-5 rounded-xl'>
-          <ProjectsCarouselSM perView={1} />
+        <div className='mb-5 rounded-xl my-20'>
+          <div className='flex-col mx-auto my-auto justify-start text-center'>
+            <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
+              {t('proyectos')}
+            </div>
+          </div>
+          <div className='glide-sm hover:cursor-grab'>
+            <ProjectsCarouselSM perView={1} />
+          </div>
         </div>
         {/* Cuarta fila */}
         <div className='flex flex-col mb-5 gap-5 items-center'>
           <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
-            Hobbies
+            <Hobbies />
           </div>
           <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
             <GetInTouch />
@@ -227,15 +234,22 @@ export default function BentoColumns() {
           </div>
         </div>
         {/* Tercera fila */}
-        <div className='glide-md flex mb-5 rounded-xl'>
-          <ProjectsCarouselMD perView={2} />
+        <div className='mb-5 rounded-xl my-20'>
+          <div className='flex-col mx-auto my-auto justify-start text-center'>
+            <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
+              {t('proyectos')}
+            </div>
+          </div>
+          <div className='glide-md hover:cursor-grab'>
+            <ProjectsCarouselMD perView={2} />
+          </div>
         </div>
         {/* Cuarta fila */}
-        <div className='flex gap-5 mb-5'>
-          <div className='w-1/3 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
-            Hobbies
+        <div className='flex flex-col mb-5 gap-5 items-center'>
+          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+            <Hobbies />
           </div>
-          <div className='w-2/3 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
             <GetInTouch />
           </div>
         </div>
@@ -342,21 +356,12 @@ export default function BentoColumns() {
               <EducationFeed />
             </m.div>
           </div>
-          {/* <div className='relative w-1/2 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'></div> */}
-          {/* <div className='relative w-1/2 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'></div> */}
         </div>
         {/* Cuarta fila */}
         <div className='mb-5 rounded-xl my-20'>
           <div className='flex-col mx-auto my-auto justify-start text-center'>
             <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               {t('proyectos')}
-              {/* <div className='flex mx-auto my-auto justify-center align-middle'>
-                <InViewLottie
-                  animationData={projectsAnimation}
-                  width={400}
-                  height={270}
-                />
-              </div> */}
             </div>
           </div>
           <div className='glide-lg hover:cursor-grab'>

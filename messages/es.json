@@ -74,5 +74,40 @@
   },
   "bento": {
     "proyectos": "Proyectos"
+  },
+  "hobbies": {
+    "subtitulo": "Conóceme un poco más como persona",
+    "musica": "Música",
+    "musica-d": "Disfruto muchos géneros musicales, así como tocar guitarra que es mi instrumento favorito",
+    "gaming": "Videojuegos",
+    "gaming-d": "Soy un amante de los videojuegos, disfruto mucho de los juegos de rol, aventura y estrategia",
+    "cocina": "Cocina",
+    "cocina-d": "Me gusta mucho cocinar, especialmente platos de comida rápida",
+    "pintura": "Pintura",
+    "pintura-d": "Aunque no soy un experto, disfruto mucho de pintar en mis ratos libres",
+    "gym": "Gimnasio",
+    "gym-d": "Me gusta mucho el ejercicio, especialmente el entrenamiento de fuerza",
+    "anime": "Anime",
+    "anime-d": "Disfruto mucho de ver anime y manga, especialmente de los géneros de acción, aventura y comedia"
+  },
+  "contacto": {
+    "titulo": "Contáctame",
+    "subtitulo-1": "Me encantaría poder ayudarte, así que no dudes en contactarme",
+    "subtitulo-2": "Llena el siguiente formulario",
+    "nombre": "Nombre",
+    "apellido": "Apellido",
+    "correo": "Correo Electrónico",
+    "celular": "Celular",
+    "detalles": "Detalles",
+    "enviar": "Enviar",
+    "subtitulo-3": "Te responderé tan pronto como sea posible",
+    "linkedin": "Si deseas conocer mi perfil de linkedin o contactarme por ahí no dudes en hacerlo",
+    "linkedin-l": "Ir a LinkedIn",
+    "whatsapp": "La forma mas rapida de contactarme 🎉.",
+    "whatsapp-l": "Ir a WhatsApp",
+    "telegram": "Una opción alternativa para recibir una respuesta rápida",
+    "telegram-l": "Ir a Telegram",
+    "discord": "Opción por si quieres hacer un nuevo amigo",
+    "discord-l": "Ir a Discord"
   }
 }
