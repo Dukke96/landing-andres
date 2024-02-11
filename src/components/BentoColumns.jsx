@@ -1,9 +1,7 @@
 'use client';
 
 // Bibliotecas externas
-import React, { useState, useEffect } from 'react';
-import { motion as m } from 'framer-motion';
-import Lottie from 'lottie-react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useTranslations } from 'next-intl';
 
@@ -28,70 +26,150 @@ import stackAnimation from '@/assets/stackAnimation.json';
 import skillsAnimation from '@/assets/skillsAnimation.json';
 import projectsAnimation from '@/assets/projectsAnimation.json';
 
-// import experienceAnimationLottie from '@/assets/experienceAnimationLottie';
-
 export default function BentoColumns() {
   const t = useTranslations('bento');
-  // eslint-disable-next-line no-unused-vars
-  const [inViewRefAbout, inViewAbout] = useInView({ triggerOnce: false });
-  const [inViewRefStack, inViewStack] = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
 
-  const [inViewRefSkills, inViewSkills] = useInView({
-    triggerOnce: false,
-    threshold: 0.3,
-  });
-  const [inViewRefExperience, inViewExperience] = useInView({
+  // Refs e inView para animaciones del aboutMe
+  const { ref: aboutMeMobileRef, inView: aboutMeMobileInView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.1,
   });
-  const [inViewRefEducation, inViewEducation] = useInView({
+  const { ref: aboutMeSMRef, inView: aboutMeSMInView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.1,
+  });
+  const { ref: aboutMeMDRef, inView: aboutMeMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: aboutMeRef, inView: aboutMeInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
-  const [animatePropsStack, setAnimatePropsStack] = useState({
-    x: '-100vw',
-    opacity: 0,
+  // Refs e inView para animaciones del stack
+  const { ref: stackMobileRef, inView: stackMobileInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
-  const [animatePropsSkills, setAnimatePropsSkills] = useState({
-    x: '100vw',
-    opacity: 0,
+  const { ref: stackSMRef, inView: stackSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
-  const [animatePropsExperience, setAnimatePropsExperience] = useState({
-    x: '100vw',
-    opacity: 0,
+  const { ref: stackMDRef, inView: stackMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
-  const [animatePropsEducation, setAnimatePropsEducation] = useState({
-    x: '100vw',
-    opacity: 0,
+  const { ref: stackRef, inView: stackInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
-  useEffect(() => {
-    if (inViewStack) {
-      setAnimatePropsStack({ x: 0, opacity: 1 });
-    }
-  }, [inViewStack]);
+  // Refs e inView para animaciones de skills
+  const { ref: skillsMobileRef, inView: skillsMobileInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: skillsSMRef, inView: skillsSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: skillsMDRef, inView: skillsMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: skillsRef, inView: skillsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  useEffect(() => {
-    if (inViewSkills) {
-      setAnimatePropsSkills({ x: 0, opacity: 1 });
-    }
-  }, [inViewSkills]);
+  // Refs e inView para animaciones de experience
+  const { ref: experienceMobileRef, inView: experienceMobileInView } =
+    useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+    });
+  const { ref: experienceSMRef, inView: experienceSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: experienceMDRef, inView: experienceMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: experienceRef, inView: experienceInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  useEffect(() => {
-    if (inViewExperience) {
-      setAnimatePropsExperience({ x: 0, opacity: 1 });
-    }
-  }, [inViewExperience]);
+  // Refs e inView para animaciones de education
+  const { ref: educationMobileRef, inView: educationMobileInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: educationSMRef, inView: educationSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: educationMDRef, inView: educationMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: educationRef, inView: educationInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  useEffect(() => {
-    if (inViewEducation) {
-      setAnimatePropsEducation({ x: 0, opacity: 1 });
-    }
-  }, [inViewEducation]);
+  // Refs e inView para animaciones de projects
+  const { ref: projectsMobileRef, inView: projectsMobileInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: projectsSMRef, inView: projectsSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: projectsMDRef, inView: projectsMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: projectsRef, inView: projectsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  // Refs e inView para animaciones de hobbies
+  const { ref: hobbiesMobileRef, inView: hobbiesMobileInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: hobbiesSMRef, inView: hobbiesSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: hobbiesMDRef, inView: hobbiesMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: hobbiesRef, inView: hobbiesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  // Refs e inView para animaciones de getInTouch
+  const { ref: getInTouchMobileRef, inView: getInTouchMobileInView } =
+    useInView({
+      triggerOnce: true,
+      threshold: 0.1,
+    });
+  const { ref: getInTouchSMRef, inView: getInTouchSMInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: getInTouchMDRef, inView: getInTouchMDInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <>
@@ -99,47 +177,85 @@ export default function BentoColumns() {
       <div className='sm:hidden justify-center overflow-visible'>
         {/* Primera fila */}
         <div className='flex flex-col items-center mb-5 gap-5'>
-          <div className='min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={aboutMeMobileRef}
+            className={`${
+              aboutMeMobileInView ? 'animate-fade-in-up opacity-100' : ''
+            } opacity-0 min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <AboutMeCard />
           </div>
-          <div className='relative lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
-            <Lottie
-              animationData={stackAnimation}
-              style={{ width: 120, height: 120 }}
-              className='absolute top-[-50px] left-[-30px] z-50'
-            />
+          <div
+            ref={stackMobileRef}
+            className={`${
+              stackMobileInView ? 'animate-fade-in-right opacity-100' : ''
+            } opacity-0 relative lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
+            <div className='absolute top-[-50px] left-[-30px] z-40'>
+              <InViewLottie
+                animationData={stackAnimation}
+                width={120}
+                height={120}
+              />
+            </div>
             <Stack />
           </div>
-          <div className='relative w-full mb-5 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
-            <Lottie
-              animationData={skillsAnimation}
-              style={{ width: 140, height: 140 }}
-              className='absolute top-[-60px] left-[-40px] z-50'
-            />
+          <div
+            ref={skillsMobileRef}
+            className={`${
+              skillsMobileInView ? 'animate-fade-in-left opacity-100' : ''
+            } opacity-0 relative lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
+            <div className='absolute top-[-60px] left-[-40px] z-40'>
+              <InViewLottie
+                animationData={skillsAnimation}
+                width={140}
+                height={140}
+              />
+            </div>
             <Skills2 />
           </div>
         </div>
         {/* Segunda fila */}
         <div className='flex flex-col items-center mb-5 gap-5'>
-          <div className='relative min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
-            <Lottie
-              animationData={experienceAnimation}
-              style={{ width: 170, height: 170 }}
-              className='absolute top-[-60px] right-[-20px]'
-            />
+          <div
+            ref={experienceMobileRef}
+            className={`${
+              experienceMobileInView ? 'animate-fade-in-down opacity-100' : ''
+            } opacity-0 relative min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
+            <div className='absolute top-[-60px] right-[-20px] z-40'>
+              <InViewLottie
+                animationData={experienceAnimation}
+                width={170}
+                height={170}
+              />
+            </div>
             <ExperienceFeed />
           </div>
-          <div className='relative min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
-            <Lottie
-              animationData={educationAnimation}
-              style={{ width: 150, height: 150 }}
-              className='absolute top-[-50px] right-[-10px]'
-            />
+          <div
+            ref={educationMobileRef}
+            className={`${
+              educationMobileInView ? 'animate-fade-in-up opacity-100' : ''
+            } opacity-0 relative min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
+            <div className='absolute top-[-50px] right-[-10px]'>
+              <InViewLottie
+                animationData={educationAnimation}
+                width={150}
+                height={150}
+              />
+            </div>
             <EducationFeed />
           </div>
         </div>
         {/* Tercera fila */}
-        <div className='glide-mb mb-5 rounded-xl my-5'>
+        <div
+          ref={projectsMobileRef}
+          className={`${
+            projectsMobileInView ? 'animate-zoom-in opacity-100' : ''
+          } opacity-0 glide-mb mb-5 rounded-xl my-5`}
+        >
           <div className='flex mx-auto my-auto justify-center text-center'>
             <div className='flex-col w-full justify-center mx-auto text-2xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               {t('proyectos')}
@@ -158,10 +274,22 @@ export default function BentoColumns() {
         </div>
         {/* Cuarta fila */}
         <div className='flex flex-col mb-5 gap-5 items-center'>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={hobbiesMobileRef}
+            className={`${
+              hobbiesMobileInView ? 'animate-blurred-fade-in opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <Hobbies />
           </div>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={getInTouchMobileRef}
+            className={`${
+              getInTouchMobileInView
+                ? 'animate-blurred-fade-in opacity-100'
+                : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <GetInTouch />
           </div>
         </div>
@@ -171,27 +299,57 @@ export default function BentoColumns() {
       <div className='hidden sm:block justify-center overflow-visible md:hidden'>
         {/* Primera fila */}
         <div className='flex flex-col items-center mb-5 gap-5'>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={aboutMeSMRef}
+            className={`${
+              aboutMeSMInView ? 'animate-fade-in-up opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <AboutMeCard />
           </div>
-          <div className='lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={stackSMRef}
+            className={`${
+              stackSMInView ? 'animate-fade-in-right opacity-100' : ''
+            } opacity-0 lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <Stack />
           </div>
-          <div className='w-full mb-5 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={skillsSMRef}
+            className={`${
+              skillsSMInView ? 'animate-fade-in-left opacity-100' : ''
+            } opacity-0 w-full mb-5 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <Skills2 />
           </div>
         </div>
         {/* Segunda fila */}
         <div className='flex flex-col items-center mb-5 gap-5'>
-          <div className='min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={experienceSMRef}
+            className={`${
+              experienceSMInView ? 'animate-fade-in-down opacity-100' : ''
+            } opacity-0 min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <ExperienceFeed />
           </div>
-          <div className='min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={educationSMRef}
+            className={`${
+              educationSMInView ? 'animate-fade-in-up opacity-100' : ''
+            } opacity-0 min-w-[340px] rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <EducationFeed />
           </div>
         </div>
         {/* Tercera fila */}
-        <div className='mb-5 rounded-xl my-20'>
+        <div
+          ref={projectsSMRef}
+          className={`${
+            projectsSMInView ? 'animate-zoom-in opacity-100' : ''
+          } opacity-0 mb-5 rounded-xl my-20`}
+        >
           <div className='flex-col mx-auto my-auto justify-start text-center'>
             <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               {t('proyectos')}
@@ -203,10 +361,20 @@ export default function BentoColumns() {
         </div>
         {/* Cuarta fila */}
         <div className='flex flex-col mb-5 gap-5 items-center'>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={hobbiesSMRef}
+            className={`${
+              hobbiesSMInView ? 'animate-blurred-fade-in opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <Hobbies />
           </div>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={getInTouchSMRef}
+            className={`${
+              getInTouchSMInView ? 'animate-blurred-fade-in opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <GetInTouch />
           </div>
         </div>
@@ -215,26 +383,56 @@ export default function BentoColumns() {
       {/* Laptop MD */}
       <div className='md:overflow-visible hidden md:block lg:hidden'>
         {/* Primera fila */}
-        <div className='lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+        <div
+          ref={aboutMeMDRef}
+          className={`${
+            aboutMeMDInView ? 'animate-fade-in-up opacity-100' : ''
+          } opacity-0 lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+        >
           <AboutMeCard />
         </div>
-        <div className='lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+        <div
+          ref={stackMDRef}
+          className={`${
+            stackMDInView ? 'animate-fade-in-right opacity-100' : ''
+          } opacity-0 lg:w-3/3 my-5 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+        >
           <Stack />
         </div>
-        <div className='w-full mb-5 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+        <div
+          ref={skillsMDRef}
+          className={`${
+            skillsMDInView ? 'animate-fade-in-left opacity-100' : ''
+          } opacity-0 w-full mb-5 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+        >
           <Skills2 />
         </div>
         {/* Segunda fila */}
         <div className='md:flex-row flex flex-col mb-5 gap-5'>
-          <div className='md:w-1/2 w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={experienceMDRef}
+            className={`${
+              experienceMDInView ? 'animate-fade-in-down opacity-100' : ''
+            } opacity-0 md:w-1/2 w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <ExperienceFeed />
           </div>
-          <div className='md:w-1/2 w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'>
+          <div
+            ref={educationMDRef}
+            className={`${
+              educationMDInView ? 'animate-fade-in-up opacity-100' : ''
+            } opacity-0 md:w-1/2 w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500`}
+          >
             <EducationFeed />
           </div>
         </div>
         {/* Tercera fila */}
-        <div className='mb-5 rounded-xl my-20'>
+        <div
+          ref={projectsMDRef}
+          className={`${
+            projectsMDInView ? 'animate-zoom-in opacity-100' : ''
+          } opacity-0 mb-5 rounded-xl my-20`}
+        >
           <div className='flex-col mx-auto my-auto justify-start text-center'>
             <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               {t('proyectos')}
@@ -246,10 +444,20 @@ export default function BentoColumns() {
         </div>
         {/* Cuarta fila */}
         <div className='flex flex-col mb-5 gap-5 items-center'>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={hobbiesMDRef}
+            className={`${
+              hobbiesMDInView ? 'animate-blurred-fade-in opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <Hobbies />
           </div>
-          <div className='min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
+          <div
+            ref={getInTouchMDRef}
+            className={`${
+              getInTouchMDInView ? 'animate-blurred-fade-in opacity-100' : ''
+            } opacity-0 min-w-[340px] w-full rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90`}
+          >
             <GetInTouch />
           </div>
         </div>
@@ -258,29 +466,25 @@ export default function BentoColumns() {
       {/* Desktop LG */}
       <div className='hidden lg:block'>
         {/* Primera fila */}
-        <m.div
-          ref={inViewRefAbout}
-          initial={{ y: '-100vw', opacity: 0 }}
-          animate={{ y: '0', opacity: 1 }}
-          transition={{ duration: 1.5 }}
-          className='lg:w-3/3 w-full justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500'
+        <div
+          ref={aboutMeRef}
+          className={`lg:w-3/3 w-full opacity-0 justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 ${
+            aboutMeInView ? 'animate-fade-in-up opacity-100' : ''
+          }`}
         >
           <AboutMeCard />
-        </m.div>
+        </div>
 
         {/* Segunda fila */}
         <div className='lg:flex flex-grow gap-20 my-20 flex-col lg:flex-row h-full'>
-          <div
-            ref={inViewRefStack}
-            className='lg:relative w-1/2 flex-col justify-center flex-grow'
-          >
-            <m.div
-              initial={{ x: '-100vw', opacity: 0 }}
-              animate={animatePropsStack}
-              transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
-              className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
+          <div className='lg:relative w-1/2 flex-col justify-center flex-grow'>
+            <div
+              ref={stackRef}
+              className={`${
+                stackInView ? 'animate-fade-in-right' : ''
+              } rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full`}
             >
-              <div className='absolute top-[-100px] left-[-90px] z-50'>
+              <div className='absolute top-[-100px] left-[-90px] z-40'>
                 <InViewLottie
                   animationData={stackAnimation}
                   width={200}
@@ -288,20 +492,17 @@ export default function BentoColumns() {
                 />
               </div>
               <Stack />
-            </m.div>
+            </div>
           </div>
 
-          <div
-            ref={inViewRefSkills}
-            className='lg:relative w-1/2 flex-col justify-center flex-grow'
-          >
-            <m.div
-              initial={{ x: '100vw', opacity: 0 }}
-              animate={animatePropsSkills}
-              transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
-              className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
+          <div className='lg:relative w-1/2 flex-col justify-center flex-grow'>
+            <div
+              ref={skillsRef}
+              className={`${
+                skillsInView ? 'animate-fade-in-left' : ''
+              } rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full`}
             >
-              <div className='absolute top-[-100px] left-[-90px] z-50'>
+              <div className='absolute top-[-100px] left-[-90px] z-40'>
                 <InViewLottie
                   animationData={skillsAnimation}
                   width={200}
@@ -309,23 +510,20 @@ export default function BentoColumns() {
                 />
               </div>
               <Skills2 />
-            </m.div>
+            </div>
           </div>
         </div>
 
         {/* Tercera fila */}
         <div className='lg:flex-row flex flex-col gap-20 my-20'>
-          <div
-            ref={inViewRefExperience}
-            className='lg:relative w-1/2 flex-col justify-center flex-grow'
-          >
-            <m.div
-              initial={{ x: '-100vw', opacity: 0 }}
-              animate={animatePropsExperience}
-              transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
-              className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
+          <div className='lg:relative w-1/2 flex-col justify-center flex-grow'>
+            <div
+              ref={experienceRef}
+              className={`${
+                experienceInView ? 'animate-fade-in-down opacity-100' : ''
+              } opacity-0 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full`}
             >
-              <div className='absolute top-[-90px] right-[-90px] z-50'>
+              <div className='absolute top-[-90px] right-[-90px] z-40'>
                 <InViewLottie
                   animationData={experienceAnimation}
                   width={250}
@@ -333,18 +531,15 @@ export default function BentoColumns() {
                 />
               </div>
               <ExperienceFeed />
-            </m.div>
+            </div>
           </div>
 
-          <div
-            ref={inViewRefEducation}
-            className='lg:relative w-1/2 flex-col justify-center flex-grow'
-          >
-            <m.div
-              initial={{ x: '-100vw', opacity: 0 }}
-              animate={animatePropsEducation}
-              transition={{ type: 'tween', duration: 1.5, ease: 'easeInOut' }}
-              className='rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full'
+          <div className='lg:relative w-1/2 flex-col justify-center flex-grow'>
+            <div
+              ref={educationRef}
+              className={`${
+                educationInView ? 'animate-fade-in-up opacity-100' : ''
+              } rounded-xl opacity-0 border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90 hover:shadow-md dark:hover:shadow-slate-200 hover:shadow-slate-500 h-full`}
             >
               <div className='absolute top-[-100px] right-[-60px]'>
                 <InViewLottie
@@ -354,11 +549,17 @@ export default function BentoColumns() {
                 />
               </div>
               <EducationFeed />
-            </m.div>
+            </div>
           </div>
         </div>
+
         {/* Cuarta fila */}
-        <div className='mb-5 rounded-xl my-20'>
+        <div
+          ref={projectsRef}
+          className={`${
+            projectsInView ? 'animate-zoom-in opacity-100' : ''
+          } mb-5 opacity-0 rounded-xl my-20`}
+        >
           <div className='flex-col mx-auto my-auto justify-start text-center'>
             <div className='flex-col w-full justify-start mx-auto text-3xl font-bold text-purple-600 dark:text-purple-400 mb-5 mt-5'>
               {t('proyectos')}
@@ -368,8 +569,14 @@ export default function BentoColumns() {
             <ProjectsCarouselLG perView={3} />
           </div>
         </div>
+
         {/* Quinta fila */}
-        <div className='flex gap-5 mb-40'>
+        <div
+          ref={hobbiesRef}
+          className={`${
+            hobbiesInView ? 'animate-blurred-fade-in opacity-100' : ''
+          } flex gap-5 mb-40 opacity-0`}
+        >
           <div className='w-1/3 rounded-xl border-2 border-slate-400/10 bg-neutral-100/90 dark:bg-neutral-900/90'>
             <Hobbies />
           </div>

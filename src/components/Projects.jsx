@@ -19,23 +19,6 @@ export default function Projects() {
   const projects = [
     {
       imagen:
-        'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699682632/Captura_de_pantalla_2023-11-11_010320_vvouuw.png',
-      titulo: t('portfolio.titulo'),
-      subtitulo: t('portfolio.subtitulo'),
-      descripción: t('portfolio.descripcion'),
-      stack: [
-        <SiNextdotjs key='Next.JS' className='w-8 h-8' />,
-        <FaReact key='React.JS' className='w-8 h-8' />,
-        <SiTailwindcss key='Tailwind' className='w-8 h-8' />,
-        <SiNodedotjs key='Node.JS' className='w-8 h-8' />,
-        <FaGitAlt key='Git' className='w-8 h-8' />,
-        <FaNpm key='Npm' className='w-8 h-8' />,
-        <SiVercel key='Vercel' className='w-8 h-8' />,
-        <FaGithub key='Github' className='w-8 h-8' />,
-      ],
-    },
-    {
-      imagen:
         'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699682108/Captura_de_pantalla_2023-11-11_005444_njzdp4.png',
       titulo: t('greenLoop.titulo'),
       subtitulo: t('greenLoop.subtitulo'),
@@ -72,6 +55,23 @@ export default function Projects() {
         <FaNpm key='Npm' className='w-8 h-8' />,
         <SiVercel key='Vercel' className='w-8 h-8' />,
         <SiGitlab key='Gitlab' className='w-8 h-8' />,
+      ],
+    },
+    {
+      imagen:
+        'https://res.cloudinary.com/dxt8ig0vt/image/upload/v1699682632/Captura_de_pantalla_2023-11-11_010320_vvouuw.png',
+      titulo: t('portfolio.titulo'),
+      subtitulo: t('portfolio.subtitulo'),
+      descripción: t('portfolio.descripcion'),
+      stack: [
+        <SiNextdotjs key='Next.JS' className='w-8 h-8' />,
+        <FaReact key='React.JS' className='w-8 h-8' />,
+        <SiTailwindcss key='Tailwind' className='w-8 h-8' />,
+        <SiNodedotjs key='Node.JS' className='w-8 h-8' />,
+        <FaGitAlt key='Git' className='w-8 h-8' />,
+        <FaNpm key='Npm' className='w-8 h-8' />,
+        <SiVercel key='Vercel' className='w-8 h-8' />,
+        <FaGithub key='Github' className='w-8 h-8' />,
       ],
     },
   ];

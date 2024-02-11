@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Glide from '@glidejs/glide';
 // eslint-disable-next-line import/extensions
-import Projects from '@/assets/Projects';
+import Projects from '@/components/Projects';
 
 export default function ProjectsCarouselMD({ perView }) {
   useEffect(() => {

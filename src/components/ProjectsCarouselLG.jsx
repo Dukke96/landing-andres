@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react';
 import Glide from '@glidejs/glide';
-import Projects from '@/assets/Projects';
+import Projects from '@/components/Projects';
 
 export default function ProjectsCarouselLG({ perView }) {
   useEffect(() => {

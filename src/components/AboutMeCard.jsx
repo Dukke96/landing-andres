@@ -107,6 +107,7 @@ export default function AboutMeCard() {
             width={400}
             height={300}
             className='object-cover flex justify-end min-h-full min-w-full max-h-[464px]'
+            loading='lazy'
           />
         </figure>
       </div>
