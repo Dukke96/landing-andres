@@ -39,8 +39,56 @@ export default function GetInTouch() {
     }));
   };
 
+  // Funciones de validación
+  const validateName = (name) => name.trim() !== '';
+  const validateEmail = (email) => {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return regex.test(email);
+  };
+  const validateDetails = (details) => details.trim() !== '';
+  const validateNumber = (number) => {
+    const regex = /^\+?\d+$/;
+    return regex.test(number);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // Validar campos
+    if (!validateName(formData.name)) {
+      setModalInfo({
+        isOpen: true,
+        title: 'Error',
+        message: 'Por favor, introduce un nombre válido.',
+      });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setModalInfo({
+        isOpen: true,
+        title: 'Error',
+        message: 'Por favor, introduce un correo electrónico válido.',
+      });
+      return;
+    }
+
+    if (!validateDetails(formData.detalles)) {
+      setModalInfo({
+        isOpen: true,
+        title: 'Error',
+        message: 'Por favor, introduce detalles válidos.',
+      });
+      return;
+    }
+
+    if (!validateNumber(formData.number)) {
+      setModalInfo({
+        isOpen: true,
+        title: 'Error',
+        message: 'Por favor, introduce un número de celular válido.',
+      });
+      return;
+    }
     setIsLoading(true); // Inicia el spinner antes de enviar la solicitud
 
     try {
@@ -135,6 +183,7 @@ export default function GetInTouch() {
                       placeholder={t('nombre')}
                       onChange={handleChange}
                       value={formData?.name}
+                      required
                     />
                   </div>
 
@@ -168,6 +217,7 @@ export default function GetInTouch() {
                     placeholder={t('correo')}
                     onChange={handleChange}
                     value={formData?.email}
+                    required
                   />
                 </div>
 
@@ -198,6 +248,7 @@ export default function GetInTouch() {
                     placeholder={t('detalles')}
                     onChange={handleChange}
                     value={formData?.detalles}
+                    required
                   />
                 </div>
               </div>
